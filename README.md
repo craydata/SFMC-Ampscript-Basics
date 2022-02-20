@@ -1,4 +1,31 @@
-# Retrieving Salesforce fields and poplating a form with Ampscript
+## Data Cleaning Sinppets in Ampscript
+
+```
+Code					What It Does
+%%=ProperCase(FullName)=%%		Propercase : Returns specified string with the initial letter of each word capitalized.
+%%=Lowercase(FavoriteColor)=%%		Lowercase : Returns the value in lowercase letters.
+%%=Uppercase(FirstName)=%%		Uppercase : Returns the value in all uppercase letters.
+%%=Format(Now(), "YYYY")=%%		Format : Returns the value according to the “string” you specify. This can be used to help manipulate data, for example a 						year in a copyright footer.
+```
+
+
+# Udating a language in AMPScript
+###   What It Does
+•	If a customer’s language is identified as FR (French), the greeting displays as Bonjour!
+•	If a customer’s language is identified as SP (Spanish), the greeting displays as Hola!
+•	If a customer’s language is set to anything else (or not provided), the greeting displays as Hi!
+
+```
+<script runat=server language=ampscript>
+IF @language == 'FR' THEN
+    SET @greeting = 'Bonjour!'
+ELSEIF @language == 'SP' THEN
+    SET @greeting = '¡Hola!'
+ELSE
+    SET @greeting = 'Hi!'
+ENDIF
+</script>	
+```
 
 ```
 %%[
@@ -72,7 +99,7 @@ ENDIF
 </html>
 ```
 
-# How to retrieve records using complex filters with server-side Javascript
+## How to retrieve records using complex filters with server-side Javascript
 
 ```
 <script runat="server">
